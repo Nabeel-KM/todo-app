@@ -8,9 +8,8 @@
   margin-bottom: 20px;
 }
 
-input[type="text"] {
+input[type="text"], input[type="date"], select {
   padding: 10px;
-  width: 300px;
   margin-right: 10px;
 }
 
@@ -24,6 +23,14 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.todo-filters {
+  margin-bottom: 20px;
+}
+
+.todo-filters button {
+  margin-right: 5px;
 }
 
 ul {
@@ -40,29 +47,60 @@ li {
   align-items: center;
 }
 
-li.completed {
+li.completed .todo-details span:first-of-type {
   text-decoration: line-through;
   color: gray;
 }
 
-li input[type="checkbox"] {
-  margin-right: 10px;
+.todo-details {
+  display: flex;
+  align-items: center;
 }
 
-li button {
+.todo-details span {
+  margin-right: 15px;
+}
+
+.due-date {
+  color: green;
+}
+
+.overdue {
+  color: red;
+}
+
+.priority {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.priority.low {
+  background-color: #6c757d;
+}
+
+.priority.medium {
+  background-color: #ffc107;
+}
+
+.priority.high {
+  background-color: #dc3545;
+}
+
+.todo-actions button {
   background-color: #dc3545;
   padding: 5px 10px;
   margin-left: 5px;
 }
 
-li button:hover {
+.todo-actions button:hover {
   background-color: #c82333;
 }
 
-li button:first-of-type {
+.todo-actions button:first-of-type {
   background-color: #ffc107;
 }
 
-li button:first-of-type:hover {
+.todo-actions button:first-of-type:hover {
   background-color: #e0a800;
 }
