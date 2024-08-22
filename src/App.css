@@ -4,13 +4,25 @@
   margin-top: 50px;
 }
 
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
 .todo-input {
   margin-bottom: 20px;
 }
 
-input[type="text"], input[type="date"], select {
+input[type="text"], input[type="date"], select, textarea {
   padding: 10px;
   margin-right: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+textarea {
+  height: 60px;
+  resize: none;
 }
 
 button {
@@ -45,6 +57,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
 li.completed .todo-details span:first-of-type {
@@ -54,53 +67,58 @@ li.completed .todo-details span:first-of-type {
 
 .todo-details {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
 }
 
 .todo-details span {
-  margin-right: 15px;
+  margin-bottom: 5px;
 }
 
-.due-date {
-  color: green;
-}
-
-.overdue {
+.due-date.overdue {
   color: red;
 }
 
 .priority {
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: white;
+  margin-top: 5px;
 }
 
 .priority.low {
-  background-color: #6c757d;
+  color: green;
 }
 
 .priority.medium {
-  background-color: #ffc107;
+  color: orange;
 }
 
 .priority.high {
-  background-color: #dc3545;
+  color: red;
+}
+
+.subtasks {
+  margin-top: 10px;
+}
+
+.subtask {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.subtask.completed span {
+  text-decoration: line-through;
+}
+
+.subtask input {
+  margin-right: 10px;
 }
 
 .todo-actions button {
-  background-color: #dc3545;
-  padding: 5px 10px;
-  margin-left: 5px;
+  margin-right: 10px;
 }
 
-.todo-actions button:hover {
-  background-color: #c82333;
-}
-
-.todo-actions button:first-of-type {
-  background-color: #ffc107;
-}
-
-.todo-actions button:first-of-type:hover {
-  background-color: #e0a800;
+li:hover {
+  transform: scale(1.02);
+  background-color: #e9ecef;
 }
